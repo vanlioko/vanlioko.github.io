@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://d3resource.com/journey/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>D3 Season 20 Quick Start Tracker</title>
+<!--	<script src="http://us.battle.net/d3/static/js/tooltips.js"></script> -->
+	<script src="./resources/jquery-3.0.0.min.js.download"></script>
+	<script src="./resources/jquery-ui.min.js.download"></script>
+	<script src="./resources/functions.js.download"></script>
+	<link rel="stylesheet" type="text/css" href="./resources/main-style.css">
+	<link rel="stylesheet" type="text/css" href="./resources/d3rheader.css">
+	<link rel="stylesheet" type="text/css" href="./resources/jquery-ui.min.css">
+</head>
+<body>
+
+<div id="maindiv">
+
+<table align="center">
+<tr>
+<td><img src="resources/d3logo.png" width="100" height="100"></td>
+<td><h1>Season 20 Quick Start Tracker</h1></td>
+</tr>
+</table>
+
+<!--
+<div id="countdowndiv">
+	<div class="countdowndiv">Countdown NA:
+		<p class="countdown" id="countdown_na"></p>
+	</div>
+
+	<div class="countdowndiv">Countdown EU:
+		<p class="countdown" id="countdown_eu"></p>
+	</div>
+
+	<div class="countdowndiv">Countdown Asia:
+		<p class="countdown" id="countdown_asia"></p>
+	</div>
+	
+</div>
+-->
+
+<table class="sjtablelayout">
+<tbody>
+<tr class="sjtable">
+<th id="th-1" class="sjtable header">Start</th>
+<th id="th-2" class="sjtable header">Lv 1-39</th>
+<th id="th-3" class="sjtable header">Lv 40-59</th>
+<th id="th-4" class="sjtable header">Lv 60-70</th>
+<th id="th-5" class="sjtable header">Phase I</th>
+<th id="th-6" class="sjtable header">Phase II</th>
+<th id="th-7" class="sjtable header">Phase III</th>
+<th id="th-8" class="sjtable header">Phase IV</th>
+<th id="th-9" class="sjtable header">Phase V</th>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1a" class="cat1 sjtable sjitem rift not">Create a new<br />seasonal character.</td>
+ 
+<td id="td-sj2a" class="cat2 sjtable sjitem rift not">Lv 5: Equip follower passive #1.</td>
+ 
+<td id="td-sj3a" class="cat3 sjtable sjitem rift not">Lv 40: Craft/enchant Lv 70 2h mace<br>for reduced level requirement <b>(Tip #4)</b></td>
+ 
+<td id="td-sj4a" class="cat4 sjtable sjitem rift not">4</td>
+ 
+<td id="td-sj5a" class="cat5 sjtable sjitem rift not">5</td>
+ 
+<td id="td-sj6a" class="cat6 sjtable sjitem rift not">6</td>
+ 
+<td id="td-sj7a" class="cat7 sjtable sjitem rift not">7</td>
+ 
+<td id="td-sj8a" class="cat8 sjtable sjitem rift not">8</td>
+ 
+<td id="td-sj9a" class="cat9 sjtable sjitem rift not">9</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1b" class="cat1 sjtable sjitem misc not">Hire templar, take his weapon,<br />give him enchantress weapon.</td>
+ 
+<td id="td-sj2b" class="cat2 sjtable sjitem misc not">Lv 7: Add rune to secondary skill.</td>
+ 
+<td id="td-sj3b" class="cat3 sjtable sjitem kadala not">3</td>
+ 
+<td id="td-sj4b" class="cat4 sjtable sjitem solo not">4</td>
+ 
+<td id="td-sj5b" class="cat5 sjtable sjitem solo not">5</td>
+ 
+<td id="td-sj6b" class="cat6 sjtable sjitem solo not">6</td>
+ 
+<td id="td-sj7b" class="cat7 sjtable sjitem solo not">7</td>
+ 
+<td id="td-sj8b" class="cat8 sjtable sjitem solo not">8</td>
+ 
+<td id="td-sj9b" class="cat9 sjtable sjitem solo not">9</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1c" class="cat1 sjtable sjitem kill not">Equip a pet, wings,<br />and portrait.</td>
+ 
+<td id="td-sj2c" class="cat2 sjtable sjitem kill not">Lv 10: Equip passive #1.<br>Equip follower passive #2.<br /></td>
+ 
+<td id="td-sj3c" class="cat3 sjtable sjitem kill not">3</td>
+ 
+<td id="td-sj4c" class="cat4 sjtable sjitem kill not">4</td>
+ 
+<td id="td-sj5c" class="cat5 sjtable sjitem kill not">5</td>
+ 
+<td id="td-sj6c" class="cat6 sjtable sjitem kill not">6</td>
+ 
+<td id="td-sj7c" class="cat7 sjtable sjitem kill not">7</td>
+ 
+<td id="td-sj8c" class="cat8 sjtable sjitem kill not">8</td>
+ 
+<td id="td-sj9c" class="cat9 sjtable sjitem kill not">9</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1d" class="cat1 sjtable sjitem kill not">Complete challenge rift<br />and open reward bag.</td>
+ 
+<td id="td-sj2d" class="cat2 sjtable sjitem kill not">Lv 12: Check fence vendors for<br />jewelry and primary stat items.</td>
+ 
+<td id="td-sj3d" class="cat3 sjtable sjitem kill not">3</td>
+ 
+<td id="td-sj4d" class="cat4 sjtable sjitem kill not">4</td>
+ 
+<td id="td-sj5d" class="cat5 sjtable sjitem kill not">5</td>
+ 
+<td id="td-sj6d" class="cat6 sjtable sjitem kill not">6</td>
+ 
+<td id="td-sj7d" class="cat7 sjtable sjitem kill not">7</td>
+ 
+<td id="td-sj8d" class="cat8 sjtable sjitem kill not">8</td>
+ 
+<td id="td-sj9d" class="cat9 sjtable sjitem kill not">9</td>
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1e" class="cat1 sjtable sjitem cube not">Switch to Master difficulty and<br />do a boss+bounty combo.</td>
+ 
+<td id="td-sj2e" class="cat2 sjtable sjitem cube not">Lv 17: Equip Storm Armor.</td>
+ 
+<td id="td-sj3e" class="cat3 sjtable sjitem cube not">3</td>
+ 
+<td id="td-sj4e" class="cat4 sjtable sjitem cube not">4</td>
+ 
+<td id="td-sj5e" class="cat5 sjtable sjitem cube not">5</td>
+ 
+<td id="td-sj6e" class="cat6 sjtable sjitem cube not">6</td>
+ 
+<td id="td-sj7e" class="cat7 sjtable sjitem cube not">7</td>
+ 
+<td id="td-sj8e" class="cat8 sjtable sjitem cube not">8</td>
+ 
+<td id="td-sj9e" class="cat9 sjtable sjitem cube not">9</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1f" class="cat1 sjtable sjitem bounties not">Switch to Hard difficulty<br />and level blacksmith.</td>
+ 
+<td id="td-sj2f" class="cat2 sjtable sjitem misc not">Lv 20: Equip Prodigy (Passive), Magic<br />Weapon, and check fence vendors.</td>
+ 
+<td id="td-sj3f" class="cat3 sjtable sjitem artisans not">3</td>
+ 
+<td id="td-sj4f" class="cat4 sjtable sjitem artisans not">4</td>
+ 
+<td id="td-sj5f" class="cat5 sjtable sjitem kadala not">5</td>
+ 
+<td id="td-sj6f" class="cat6 sjtable sjitem artisans not">6</td>
+ 
+<td id="td-sj7f" class="cat7 sjtable sjitem artisans not">7</td>
+ 
+<td id="td-sj8f" class="cat8 sjtable sjitem gems not">8</td>
+ 
+<td id="td-sj9f" class="cat9 sjtable sjitem gems not">9</td>
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1g" class="cat1 sjtable sjitem misc not">Get Kanai's Cube from<br />Act III - Ruins of Sescheron.</td>
+ 
+<td id="td-sj2g" class="cat2 sjtable sjitem artisans not">Lv 21: Switch from Ray of Frost<br />to Disintegrate.</td>
+ 
+<td id="td-sj3g" class="cat3 sjtable sjitem bounties not">3</td>
+ 
+<td id="td-sj4g" class="cat4 sjtable sjitem ubers not">4</td>
+ 
+<td id="td-sj5g" class="cat5 sjtable sjitem conqgems gems not">5</td>
+ 
+<td id="td-sj6g" class="cat6 sjtable sjitem conqgems gems not">6</td>
+ 
+<td id="td-sj7g" class="cat7 sjtable sjitem conqgems gems not">7</td>
+ 
+<td id="td-sj8g" class="cat8 sjtable sjitem conqgems gems not">8</td>
+ 
+<td id="td-sj9g" class="cat9 sjtable sjitem conqgems gems not">9</td>
+</tr>
+<tr class="sjtable">
+<td id="td-sj1h" class="cat1 sjtable sjitem artisans not">Craft a lvl 70 wand, upgrade<br />it in cube, and cube the power.</td>
+ 
+<td id="td-sj2h" class="cat2 sjtable sjitem artisans not">Lv 22: Equip Teleport.</td>
+ 
+<td id="td-sj3h" class="cat3 sjtable sjitem bounties not">3</td>
+ 
+<td id="td-sj4h" class="cat4 sjtable sjitem ubers not">4</td>
+ 
+<td id="td-sj5h" class="cat5 sjtable sjitem setdung not">5</td>
+ 
+<td id="td-sj6h" class="cat6 sjtable sjitem setdung not">6</td>
+ 
+<td id="td-sj7h" class="cat7 sjtable sjitem conquests not">7</td>
+ 
+<td id="td-sj8h" class="cat8 sjtable sjitem conquests not">8</td>
+ 
+<td id="td-sj9h" class="cat9 sjtable sjitem conquests not">9</td>
+</tr>
+<tr class="sjtable">
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj2i" class="cat2 sjtable sjitem artisans not">Lv 26: Add Convergence rune<br />to Disintegrate.</td>
+ 
+<td id="td-sj3i" class="cat3 sjtable sjitem bounties not">3</td>
+ 
+<td id="td-sj4i" class="cat4 sjtable sjitem ubers not">4</td>
+ 
+<td id="td-sj5i" class="cat5 sjtable sjitem ubers not">5</td>
+ 
+<td id="td-sj6i" class="cat6 sjtable sjitem ubers not">6</td>
+ 
+<td id="td-sj7i" class="cat7 sjtable sjitem ubers not">7</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+<tr class="sjtable">
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj2j" class="cat2 sjtable sjitem artisans not">Lv 30: Astral Presence (Passive)<br />Equip Familiar - Sparkflint.</td>
+ 
+<td id="td-sj3j" class="cat3 sjtable sjitem bounties not">3</td>
+ 
+<td id="td-sj4j" class="cat4 sjtable sjitem ubers not">4</td>
+ 
+<td id="td-sj5j" class="cat5 sjtable sjitem ubers not">5</td>
+ 
+<td id="td-sj6j" class="cat6 sjtable sjitem ubers not">6</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+<tr class="sjtable">
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj2k" class="cat2 sjtable sjitem artisans not">Lv 33: Roll blood shards (19 tries) at<br>Kadala for Etched Sigil. With leftover <br>shards roll Swami/Fazula's. Add Power <br>of the Storm rune to Storm Armor.</td>
+ 
+<td id="td-sj3k" class="cat3 sjtable sjitem bounties not">3</td>
+ 
+<td id="td-sj4k" class="cat4 sjtable sjitem artisans not">4</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+</tr>
+<tr class="sjtable">
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj2l" class="cat2 sjtable sjitem artisans not">Lv 35: Add Force Weapon rune<br>to Magic Weapon.</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj4l" class="cat4 sjtable sjitem artisans not">4</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+<tr class="sjtable">
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj2m" class="cat2 sjtable sjitem artisans not">2</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td id="td-sj4m" class="cat4 sjtable sjitem artisans not">4</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+ 
+<td class="sjtable empty">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<h2>Progression Tips</h2>
+<table align="center">
+<tr>
+<td><h3>Tip #1</h3></td>
+ <td>&nbsp;</td>
+<td><h3>Tip #2</h3></td>
+<td>&nbsp;</td> 
+<td><h3>Tip #3</h3></td>
+<td>&nbsp;</td>
+<td><h3>Tip #4</h3></td>
+<td>&nbsp;</td>
+<td><h3>Tip #5</h3></td>
+</tr>
+<tr>
+<td><div></div></td>
+ <td>&nbsp;</td>
+<td><div></div></td>
+ <td>&nbsp;</td>
+<td><div></div></td>
+ <td>&nbsp;</td>
+<td><div>At Lv 40, Craft Lv 70 2h mace. <br>Make sure the weapon has crowd<br>control secondary and life per<br>hit main. Re roll other secondary<br>to get reduced level requirement.<br>Check fence vendors for upgrades</div></td>
+ <td>&nbsp;</td>
+<td><div></div></td>
+</tr>
+</table>
+
+<br>
+<h2>Resources</h2>
+<div><a href="https://d3resource.com/journey/index.php" target="_blank">Season Journey Tracker</a>&nbsp;&diams;&nbsp;
+<a href="https://www.d3planner.com/game/66344/kadala" target="_blank">Kadala Calculator</a>&nbsp;&diams;&nbsp;
+<a href="http://www.diablo3gemcalculator.com/" target="_blank">Gem Calculator</a>&nbsp;&diams;&nbsp;
+<a href="https://eu.diablo3.com/en/calculator/barbarian" target="_blank">Skill Calculator</a>&nbsp;&diams;&nbsp;
+<a href="http://www.d3planner.com/" target="_blank">Character Planner</a>&nbsp;&diams;&nbsp;
+<a href="http://www.diablofans.com/" target="_blank">Popular Builds</a></div> 
+<br><br>
+</div>
+
+<p></p>
+<div align="center">Created by <b>Vanlioko#1916</b></div>
+<div align="center">Images belong to Blizzard Entertainment, Inc.</div>
+<p></p>
+
+</div>
+
+<script>
+// create link with all progress
+function createShareLink() {
+	var link = "http://d3resource.com/journey/share/";
+	$.each($("td.conqitem"), function(index, value) {
+		if($(this).hasClass("done")) {
+			link+=value.id.slice(-1);
+		}
+	});
+	link+="/";
+	$.each($("td.sjitem"), function(index, value) {
+		if($(this).hasClass("done")) {
+			link+=value.id.slice(-2);
+		}
+	});	
+	return link;
+}
+
+// share dialog
+$(function() {
+	$("#sharedialog").dialog({
+		autoOpen: false,
+		modal: false,
+		buttons: {
+			"Close" : function() {
+				$(this).dialog("close");
+			}
+		}
+	});
+
+	$("span#shareprogress").on("click", function(e) {
+		e.preventDefault();
+		$("#sharedialog").dialog("open");
+		$("input#shareinput").val(createShareLink());
+		$("input#shareinput").select();
+		document.execCommand("copy");
+	});
+});
+
+// "reset all" button: safety net
+$(function() {
+	$("#resetdialog").dialog({
+		autoOpen: false,
+		modal: true,
+		buttons: {
+			"Reset" : function() {
+				// reset action
+				resetAll();
+				checkComplete();
+				$(this).dialog("close");
+			},
+			"Cancel" : function() {
+				$(this).dialog("close");
+			}
+		}
+	});
+
+	$("span#resetall").on("click", function(e) {
+		e.preventDefault();
+		$("#resetdialog").dialog("open");
+	});
+});
+
+// toggle entire column by clicking on header
+$('th.header').click(function(event) {
+	var criterion = [0, 8, 11, 11, 12, 10, 10, 9, 8, 8];
+	var col = this.id.substr(3,4);
+	var s = 'abcdefghijkl';
+	if($('.cat'+col+'.done').length != criterion[col]) {
+		for(var i=0; i<s.length; i++) {
+			setSJ(col, s.charAt(i));
+		}
+	} else {
+		for(var i=0; i<s.length; i++) {
+			unsetSJ(col, s.charAt(i));
+		}
+	}
+	
+	checkComplete();
+});
+
+// toggle season journey item
+$('td.sjitem').click(function(event) {
+	var sjid = $(this).attr('id');
+	var status = 'done';
+	if($(this).hasClass('done')) {
+		status = 'not';
+		unsetSJ(event.target.id.substring(5,6), event.target.id.substring(6,7));
+	} else {
+		setSJ(event.target.id.substring(5,6), event.target.id.substring(6,7));
+	}
+
+	// check Nephalem Rift logic
+	if(sjid === 'td-sj9a' && status === 'done') {
+
+	
+
+
+	// check legendary gems logic: augmenting (+set leveling)
+	} else if(sjid === 'td-sj8f' && status === 'done') {
+		setSJ('5', 'g');
+		
+	// check legendary gems logic: leveling (+unset augmenting)
+	} else if(sjid === 'td-sj9g' && status === 'done') {
+
+	
+	// check level 50/70
+	} else if(sjid === 'td-sj2b' && status === 'done') {
+	} else if(sjid === 'td-sj1b' && status === 'not') {
+
+	// cube logic
+	} else if(sjid === 'td-sj9e' && status === 'done') {
+	} else if(sjid === 'td-sj7e' && status === 'done') {
+	} else if(sjid === 'td-sj7e' && status === 'not') {
+	} else if(sjid === 'td-sj5e' && status === 'done') {
+	} else if(sjid === 'td-sj3e' && status === 'not') {
+	} else if(sjid === 'td-sj3e' || sjid === 'td-sj4e' || sjid === 'td-sj5e' || sjid === 'td-sj6e' ||  sjid === 'td-sj8e') {
+		if(status === 'done') {
+		}
+	} else if(sjid ==='td-sj2e' && status === 'not') {
+	
+	// artisan logic
+	} else if(sjid === 'td-sj7i' && status === 'done') {
+	} else if(sjid === 'td-sj2g' && status === 'done') {
+	} else if(sjid === 'td-sj2i' && status === 'done') {
+	} else if(sjid === 'td-sj1i' && status === 'not') {
+//	} else if(sjid === 'td-sj2j' && status === 'done') {
+	} else if(sjid === 'td-sj1j' && status === 'not') {
+	} else if(sjid === 'td-sj1h' && status === 'not') {
+	} else if(sjid === 'td-sj4f' && status === 'done') {
+	} else if(sjid === 'td-sj2j' && status === 'not') {
+	
+	// kadala
+	} else if(sjid === 'td-sj5f' && status === 'done') {
+	} else if(sjid === 'td-sj3b' && status === 'not') {
+	
+	// set dungeons
+	} else if(sjid === 'td-sj6h' && status === 'done') {
+	} else if(sjid === 'td-sj5h' && status === 'not') {
+	
+	// conquests
+	} else if(sjid === 'td-sj9h' && status === 'done') {
+	} else if(sjid === 'td-sj8h' && status === 'done') {
+	} else if(sjid === 'td-sj7h' && status === 'not') {
+	} else if(sjid === 'td-sj8h' && status === 'not') {
+
+	}
+	
+	checkComplete();
+});
+
+// toggle conquest
+$('td.conqitem').click(function(event) {
+	var conqid = $(this).attr('id');
+	var status = 'done';
+	if($(this).hasClass('done')) {
+		status = 'not';
+	}
+
+	// all conquests require max level
+	if(status === 'done') {
+	}
+	
+	// if 1/2/3 conquests done than check off sjitem
+	if($('.conqitem.done').length == 0) { unsetSJ('7', 'h'); unsetSJ('8', 'h'); unsetSJ('9', 'h'); }
+	else if($('.conqitem.done').length == 1) { setSJ('7', 'h'); unsetSJ('8', 'h'); unsetSJ('9', 'h'); }
+	else if($('.conqitem.done').length == 2) { setSJ('7', 'h'); setSJ('8', 'h'); unsetSJ('9', 'h'); }
+	else if($('.conqitem.done').length > 2) { setSJ('7', 'h'); setSJ('8', 'h'); setSJ('9', 'h'); }
+
+	// if gr45 w/o sets check solo grs
+	if(conqid === 'conq-c' || conqid === 'conq-h') {
+		if($('#conq-c').hasClass('done') || $('#conq-h').hasClass('done')) {
+		}
+	}
+
+	// sprinter checks first two bosses
+	if(conqid === 'conq-e' || conqid === 'conq-j') {
+		if($('#conq-e').hasClass('done') || $('#conq-j').hasClass('done')) {
+		}
+	}
+
+
+	// all but avarice conquests require max level
+	if(conqid != 'conq-a' && conqid != 'conq-f') {
+		if(status === 'done') {
+		}
+		// all but avarice/sprinter (currently not on) require a normal rift at least
+		if(conqid != 'conq-a' && conqid != 'conq-f') {
+		}
+	}
+
+/*
+	// speed demon checks first 6 rifts
+	if(conqid === 'conq-b' || conqid === 'conq-g') {
+		if($('#conq-b').hasClass('done') || $('#conq-g').hasClass('done')) {
+		}
+	}
+*/
+
+/*	
+	// boss mode checks most of the bosses
+	if(conqid === 'conq-b' || conqid === 'conq-g') {
+		if($('#conq-b').hasClass('done') || $('#conq-g').hasClass('done')) {
+		}
+	}
+*/
+
+
+	// if gr75 check solo grs + rift
+	if(conqid === 'conq-d' || conqid === 'conq-i') {
+		if($('#conq-d').hasClass('done') || $('#conq-i').hasClass('done')) {
+		}
+	}
+
+
+	checkComplete();
+});
+
+// select a category
+$('span.categories').click(function(event) {
+	$(event.target).toggleClass('selected');
+	$('td.sjitem.'+event.target.id.toString()).toggleClass('selected');
+	if(event.target.id.toString()=='conquests') {
+		$('div#conqdiv').toggleClass('hidden');
+		$('td.conqitem').toggleClass('selected');
+	}
+});
+
+
+// countdown from https://www.w3schools.com/howto/howto_js_countdown.asp
+// Set the date we're counting down to
+var countDownDateNA = new Date("Mar 6, 2020 1:00:00 UTC").getTime();
+var countDownDateEU = new Date("Mar 6, 2020 16:00:00 UTC").getTime();
+var countDownDateAsia = new Date("Mar 6, 2020 8:00:00 UTC").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+	// Get todays date and time
+	var now = new Date().getTime();
+
+	// Find the distance between now an the count down date
+	var distanceNA = countDownDateNA - now;
+	if (distanceNA < 0) {
+		document.getElementById("countdown_na").innerHTML = "STARTED";
+	} else {
+		var daysNA = Math.floor(distanceNA / (1000 * 60 * 60 * 24));
+		var hoursNA = Math.floor((distanceNA % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutesNA = Math.floor((distanceNA % (1000 * 60 * 60)) / (1000 * 60));
+		var secondsNA = Math.floor((distanceNA % (1000 * 60)) / 1000);
+		document.getElementById("countdown_na").innerHTML = daysNA + "d " + hoursNA.pad(2) + "h " + minutesNA.pad(2) + "m " + secondsNA.pad(2) + "s ";
+	}
+
+	var distanceEU = countDownDateEU - now;
+	if (distanceEU < 0) {
+		document.getElementById("countdown_eu").innerHTML = "STARTED";
+	} else {
+		var daysEU = Math.floor(distanceEU / (1000 * 60 * 60 * 24));
+		var hoursEU = Math.floor((distanceEU % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutesEU = Math.floor((distanceEU % (1000 * 60 * 60)) / (1000 * 60));
+		var secondsEU = Math.floor((distanceEU % (1000 * 60)) / 1000);
+		document.getElementById("countdown_eu").innerHTML = daysEU + "d " + hoursEU.pad(2) + "h " + minutesEU.pad(2) + "m " + secondsEU.pad(2) + "s ";
+	}
+
+	var distanceAsia = countDownDateAsia - now;
+	if (distanceAsia < 0) {
+		document.getElementById("countdown_asia").innerHTML = "STARTED";
+	} else {
+		var daysAsia = Math.floor(distanceAsia / (1000 * 60 * 60 * 24));
+		var hoursAsia = Math.floor((distanceAsia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutesAsia = Math.floor((distanceAsia % (1000 * 60 * 60)) / (1000 * 60));
+		var secondsAsia = Math.floor((distanceAsia % (1000 * 60)) / 1000);
+		document.getElementById("countdown_asia").innerHTML = daysAsia + "d " + hoursAsia.pad(2) + "h " + minutesAsia.pad(2) + "m " + secondsAsia.pad(2) + "s ";
+	}
+	
+	if(distanceNA < 0 && distanceEU < 0 && distanceAsia <0) {
+		clearInterval(x);
+	}
+}, 1000);
+
+
+Number.prototype.pad = function(size) {
+  var s = String(this);
+  while (s.length < (size || 2)) {s = "0" + s;}
+  return s;
+}
+
+$(document).ready(function() {
+	loadSettings();
+	checkComplete();
+});
+</script>
+
+
+
+</body></html>

@@ -8,10 +8,10 @@ body {
 	font-family: Tahoma, Geneva, sans-serif;
 	color: #D8D8D8;
 	 background-color: #0C0A0A;
- background-image: url(/system/img/d3.png), url(bg.png);
- background-position: center -100px, top left;
- background-repeat: no-repeat, repeat;
- background-size: auto 500px, 50% auto;
+	background-image: url(bg.png), url(bg.png);
+	background-position: center -100px, top left;
+	background-repeat: no-repeat, repeat;
+	background-size: auto 500px, 50% auto;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -52,6 +52,10 @@ a:active {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: square;
+}
+
 .red {
 	color: red
 }
@@ -70,36 +74,6 @@ a:active {
 
 #conqdiv {
 	margin-bottom: 20px;
-}
-
-#countdowndiv {
-	width: 100%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	color: #faac53;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-
-.countdowndiv {
-	display: inline-block;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-p.countdown {
-	font-family: "Lucida Console", Monaco, monospace;
-	color: black;
-	font-weight: normal;
-	background-color: #DDDDDD;
-	padding: 8px;
-	border-radius: 8px;
-	text-align: center;
-	white-space: nowrap;
-	border: 3px solid #744620;
-	border-right: 3px solid #4E290B;
-	border-bottom: 3px solid #4E290B;
 }
 
 .hidden {
@@ -122,12 +96,14 @@ p.countdown {
 .sjtablelayout, .conqtablelayout {
 	border-spacing: 3px;
 	margin: 0 auto;
+	width: 900px;
 }
 
 .sjtable.header {
 	font-size: 1.2em;
 	color: #faac53;
 	cursor: pointer;
+
 }
 
 span.bigger {
@@ -137,14 +113,13 @@ span.bigger {
 .sjitem, .categories, .conqitem, span.button {
 	text-align: center;
 	font-size: 0.9em;
-	white-space: nowrap;
 	border-radius: 8px;
 	color: black;
 	font-family: Tahoma, Geneva, sans-serif;
 	border: 3px solid #913030;
 	border-right: 3px solid #913030;
 	border-bottom: 3px solid #913030;
-	background-color: #DDDDDD;
+	background-color: rgba(221,221,221,0.8);
 	cursor: pointer;
 }
 
